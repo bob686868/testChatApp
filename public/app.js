@@ -2,7 +2,7 @@
 // In production on AWS Amplify, set your EC2 backend URL (e.g. 'https://api.yourdomain.com' or 'http://<ec2-ip>:3000')
 const BACKEND_URL = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
   ? undefined
-  : (window.BACKEND_URL || 'https://YOUR_BACKEND_EC2_DOMAIN_OR_IP');
+  : (window.BACKEND_URL || 'https://18.227.21.147/');
 
 const socket = io(BACKEND_URL);
 
