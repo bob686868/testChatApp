@@ -1,0 +1,21 @@
+// Prisma Schema for Simple Realtime Messaging App
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Simple and clean data model:
+// Messages are tied to a room and have a sender name, text content, and timestamp.
+model Message {
+  id        Int      @id @default(autoincrement())
+  room      String   @default("general")
+  sender    String
+  content   String
+  createdAt DateTime @default(now())
+
+  @@index([room])
+}

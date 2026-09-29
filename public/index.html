@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real-time Chat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="chat-container">
+    <header class="chat-header">
+      <h2>Real-time Chat</h2>
+      <span id="roomName">Room: general</span>
+    </header>
+
+    <!-- Simple Room Switcher Bar -->
+    <div class="room-bar">
+      <input type="text" id="roomInput" placeholder="Room name (e.g. general, tech)..." value="general" />
+      <button id="joinRoomBtn" type="button">Join Room</button>
+    </div>
+
+    <!-- Message Display -->
+    <div id="messagesContainer" class="messages-box"></div>
+
+    <!-- Message Input -->
+    <form id="messageForm" class="input-form">
+      <input 
+        type="text" 
+        id="messageInput" 
+        placeholder="Type a message..." 
+        autocomplete="off" 
+        required 
+      />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
